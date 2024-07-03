@@ -1,0 +1,10 @@
+.container {
+    --max-width: 44rem;
+    width: min(var(--max-width), 100% - var(--padding-base));
+    margin-top: -1.69rem;
+    margin-inline: auto;
+}
+
+.main {
+    margin-top: 4rem;
+}

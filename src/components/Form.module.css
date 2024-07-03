@@ -1,0 +1,49 @@
+.form {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+
+    width: 100%;
+
+    & input {
+        width: 100%;
+        padding: var(--padding-base);
+
+        border-radius: 8px;
+        border: 1px solid var(--gray-700);
+        background: var(--gray-500);
+
+        color: var(--gray-300);
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+    & button {
+        appearance: unset;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: var(--padding-base);
+
+        gap: .5rem;
+
+        border-radius: 8px;
+        border: 0;
+        background: var(--blue-dark);
+
+        color: var(--gray-100);
+        font-size: 0.875rem;
+        font-weight: bold;
+        line-height: 1.4;
+
+        cursor: pointer;
+
+        transition: background .2s;
+
+        &:hover {
+            background: var(--blue);
+        }
+    }
+}
