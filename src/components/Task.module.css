@@ -55,6 +55,7 @@
 
 .removeIcon {
     cursor: pointer;
+    margin-left: auto;
 
     &:hover {
         color: var(--danger);

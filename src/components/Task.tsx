@@ -2,11 +2,25 @@ import { useState } from 'react';
 import { Trash } from 'phosphor-react';
 import styles from './Task.module.css';
 
-export function Task() {
-    const [isChecked, setIsChecked] = useState(false);
+interface TaskProps {
+    id: string;
+    content: string;
+    isCompleted: boolean;
+    onUpdateStatus: (id: string, isCompleted: boolean) => void;
+    removeTodo: (id: string) => void;
+}
+
+export function Task({id, content, isCompleted, onUpdateStatus, removeTodo}: TaskProps) {
+    const [isChecked, setIsChecked] = useState(isCompleted);
    
     const handleCheckboxChange = () => {
-        setIsChecked(!isChecked);
+        const isCompleted = !isChecked;
+        setIsChecked(isCompleted);
+        onUpdateStatus(id, isCompleted);
+    };
+
+    const handleRemoveTodo = () => {
+        removeTodo(id);
     };
 
     return (
@@ -22,8 +36,8 @@ export function Task() {
                     onChange={handleCheckboxChange}
                 />
             </div>
-            <span>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</span>
-            <Trash className={styles.removeIcon} size={14} />
+            <span>{content}</span>
+            <Trash onClick={handleRemoveTodo} className={styles.removeIcon} size={14} />
         </div>
     );
 }
