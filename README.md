@@ -27,6 +27,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - HTML e CSS
 - JavaScript
+- TypeScript
 - React
 - Git e Github
 - Figma
